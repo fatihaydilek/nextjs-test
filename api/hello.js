@@ -20,4 +20,5 @@ export default (req, res) => {
     /*console.log("now__launcher ", path.execSync('cat now__launcher.js').toString())*/
     res.status(200).json({ text: 'Hello' })
     
+
 }
