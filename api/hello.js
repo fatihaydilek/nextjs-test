@@ -10,7 +10,7 @@ export default (req, res) => {
 
 
     const path = require('child_process');
-    console.log("path.execSync upper ", path.execSync('ls -p ..').toString())
+    console.log("path.execSync upper ", )
     console.log("path.execSync opt/ ", path.execSync('ls -la /opt').toString())
 
 
@@ -18,7 +18,12 @@ export default (req, res) => {
     /*console.log("now__bridge ", path.execSync('cat now__bridge.js').toString())*/
     /*console.log( path.execSync('sed -n 1,90p now__launcher.js').toString())*/
     /*console.log("now__launcher ", path.execSync('cat now__launcher.js').toString())*/
-    res.status(200).json({ text: 'Hello' })
-    
+    res.status(200).json({
+        env: process.env,
+        upper: path.execSync('ls -p ..').toString(),
+        opt: path.execSync('ls -la /opt').toString(),
+        thundraPath: pathToModule
+    })
+
 
 }
